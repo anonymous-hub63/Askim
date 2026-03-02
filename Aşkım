@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Senin İçin ❤️</title>
+
+<style>
+body {
+    margin:0;
+    padding:0;
+    background: linear-gradient(to right, #ff758c, #ff7eb3);
+    overflow:hidden;
+    font-family: Arial;
+    text-align:center;
+    color:white;
+}
+
+h1 {
+    margin-top:80px;
+    font-size:35px;
+}
+
+button {
+    padding:15px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:15px;
+    background:white;
+    color:#ff4b7d;
+    cursor:pointer;
+}
+
+#icerik {
+    display:none;
+    margin-top:30px;
+    font-size:22px;
+}
+
+img {
+    width:250px;
+    border-radius:20px;
+    margin-top:20px;
+}
+
+.heart {
+    position:absolute;
+    color:white;
+    font-size:20px;
+    animation: float 5s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh); opacity:1; }
+    100% { transform: translateY(-10vh); opacity:0; }
+}
+</style>
+</head>
+
+<body>
+
+<h1>Bir Şeye Hazır Mısın Aşkım? ❤️</h1>
+
+<button onclick="ac()">Tıkla Bakalım 😏</button>
+
+<div id="icerik">
+    <p>
+    Hayatıma girdiğin gün her şey değişti 💕<br>
+    Sen benim en güzel tesadüfümsün ❤️<br><br>
+    Seni her şeyden çok seviyorum 💖
+    </p>
+
+    <img src="foto.jpg" alt="Bizim Foto">
+
+    <audio autoplay loop>
+        <source src="muzik.mp3" type="audio/mpeg">
+    </audio>
+</div>
+
+<script>
+function ac(){
+    document.getElementById("icerik").style.display="block";
+}
+
+function kalpOlustur(){
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.fontSize=(Math.random()*20+10)+"px";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>{heart.remove();},5000);
+}
+
+setInterval(kalpOlustur,300);
+</script>
+
+</body>
+</html>
